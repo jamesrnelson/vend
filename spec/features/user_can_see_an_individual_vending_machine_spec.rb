@@ -13,7 +13,7 @@ feature 'When a user visits a vending machine show page' do
   end
 end
 
-describe ' When a user visits a vending machine show page' do
+describe 'When a user visits a vending machine show page' do
   it 'should show the name and price of all snacks' do
     owner = Owner.create(name: "Sam's Snacks")
     dons  = owner.machines.create(location: "Don's Mixed Drinks")
@@ -28,9 +28,9 @@ describe ' When a user visits a vending machine show page' do
     expect(page).to have_content(snack2.name)
     expect(page).to have_content(snack2.price)
   end
-end\
+end
 
-describe ' When a user visits a vending machine show page' do
+describe 'When a user visits a vending machine show page' do
   it 'should show the average price for snacks in this machine' do
     owner = Owner.create(name: "Sam's Snacks")
     dons  = owner.machines.create(location: "Don's Mixed Drinks")
