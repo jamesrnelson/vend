@@ -34,8 +34,8 @@ describe ' When a user visits a vending machine show page' do
   it 'should show the average price for snacks in this machine' do
     owner = Owner.create(name: "Sam's Snacks")
     dons  = owner.machines.create(location: "Don's Mixed Drinks")
-    snack1 = dons.snacks.create(name: 'White Castle Burger', price: 3.50)
-    snack2 = dons.snacks.create(name: 'Pop Rocks', price: 1.50)
+    snack1 = dons.snacks.create(name: 'White Castle Burger', price: 3.5)
+    snack2 = dons.snacks.create(name: 'Pop Rocks', price: 1.5)
 
     visit machine_path(dons)
 
@@ -44,6 +44,6 @@ describe ' When a user visits a vending machine show page' do
     expect(page).to have_content(snack1.price)
     expect(page).to have_content(snack2.name)
     expect(page).to have_content(snack2.price)
-    expect(page).to have_content('Average Price: $2.50')
+    expect(page).to have_content('Average Price: $2.5')
   end
 end
